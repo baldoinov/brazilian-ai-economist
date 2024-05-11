@@ -1,0 +1,46 @@
+from src.foundation.base.agent import BaseAgent
+from src.foundation.base.agent import agent_registry
+
+
+@agent_registry.add
+class BasicMobileAgent(BaseAgent):
+    """
+    A basic mobile agent represents an individual actor in the economic simulation.
+
+    "Mobile" refers to agents of this type being able to move around in the 2D world.
+    """
+
+    name = "BasicMobileAgent"
+
+
+@agent_registry.add
+class BasicPlanner(BaseAgent):
+    """
+    A basic planner agent represents a social planner that sets macroeconomic policy.
+
+    Unlike the "mobile" agent, the planner does not represent an embodied agent in
+    the world environment. BasicPlanner modifies the BaseAgent class to remove
+    location as part of the agent state.
+
+    Also unlike the "mobile" agent, the planner agent is expected to be unique --
+    that is, there should only be 1 planner. For this reason, BasicPlanner ignores
+    the idx argument during construction and always sets its agent index as "p".
+    """
+
+    name = "BasicPlanner"
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        del self.state["loc"]
+
+        # Overwrite any specified index so that this one is always indexed as 'p'
+        # (make a separate class of planner if you want there to be multiple planners
+        # in a game)
+        self._idx = "p"
+
+    @property
+    def loc(self):
+        """
+        Planner agents do not occupy any location.
+        """
+        raise AttributeError("BasicPlanner agents do not occupy a location.")

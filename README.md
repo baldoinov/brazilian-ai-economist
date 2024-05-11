@@ -1,6 +1,8 @@
 # Aprendizado por Reforço no Estudo da Taxação no Brasil
 
 
+Para entender como experimentos foram rodados, veja o tutorial no arquivo [`COMO_RODAR_OS_EXPERIMENTOS.md`](/COMO_RODAR_OS_EXPERIMENTOS.md)
+
 ## Estrutura do Repositório
 
 ```
@@ -27,7 +29,6 @@
 ├── setup.py
 |
 ```
-
 
 ## Referências
 

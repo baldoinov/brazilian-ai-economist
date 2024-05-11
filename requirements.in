@@ -1,4 +1,13 @@
-ai-economist==1.7.1
-rl-warp-drive==2.6.2
+# ai-economist==1.7.1
+gymnasium
+rl-warp-drive
+ray
+ray[rllib]
+scipy
+numpy
 ipykernel
 jupyter
+black
+lz4
+dm-tree
+GPUtil

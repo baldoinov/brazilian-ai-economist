@@ -1,0 +1,14 @@
+gamma: 0.998
+lr: 0.0003
+grad_clip: 10.0
+train_batch_size: 12000
+model:
+    custom_model: keras_conv_lstm
+    custom_options:
+      fc_dim: 128
+      idx_emb_dim: 4
+      input_emb_vocab: 100
+      lstm_cell_size: 128
+      num_conv: 2
+      num_fc: 2
+    max_seq_len: 25

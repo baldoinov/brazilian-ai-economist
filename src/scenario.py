@@ -1,1 +1,0 @@
-# TODO: Implement custom Scenario that set a % of agents to not report income

@@ -1,1 +1,0 @@
-# TODO: Implement custom agent that don't report income
